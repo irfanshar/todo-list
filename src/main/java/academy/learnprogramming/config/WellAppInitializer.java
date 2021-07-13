@@ -10,7 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 @Slf4j
-public class WellAppInit implements WebApplicationInitializer {
+public class WellAppInitializer implements WebApplicationInitializer {
 
     private static final String DISPATCHER_SERVLET_NAME = "dispatcher";
 
@@ -20,7 +20,6 @@ public class WellAppInit implements WebApplicationInitializer {
 
         // create the spring application context (container)
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-
         context.register(WebConfig.class);
 
         // create the dispatcher servlet
