@@ -22,7 +22,7 @@ public class WellAppInitializer implements WebApplicationInitializer {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
         context.register(WebConfig.class);
 
-        // create the dispatcher servlet
+        // create the dispatcher servlet and use spring container (context)
         DispatcherServlet dispatcherServlet = new DispatcherServlet(context);
 
         // register and configure the dispatcher servlet
