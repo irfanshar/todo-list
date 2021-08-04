@@ -1,7 +1,10 @@
-package academy.learnprogramming;
+package academy.learnprogramming.service;
 
 import org.springframework.stereotype.Service;
 
+// annotation is a stereotype, thus no need for component annotation
+// service holds business logic
+// i.e. manipulates data, calculations, logic etc.
 @Service
 public class DemoServiceImpl implements DemoService{
 
