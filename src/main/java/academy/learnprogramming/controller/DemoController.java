@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 // no need for component annotation as controller
@@ -36,14 +37,17 @@ public class DemoController {
     }
 
     // http://localhost:8080/todo-list/welcome
+    // http://localhost:8080/todo-list/welcome?user=Irfan
+    // http://localhost:8080/todo-list/welcome?user=Irfan&age=20
     // This annotation is what will be in the url
     @GetMapping("welcome")
     // Model will be provided by the DispatcherServlet as a key/value pair
-    public String welcome(Model model){
+    public String welcome(@RequestParam String user, @RequestParam int age, Model model){
 
         // adding a key value pair since every
-        // attribute has a key ("helloMessage") and value ("Irfan")
-        model.addAttribute("helloMessage", demoService.getHelloMessage("Irfan"));
+        // attribute has a key ("helloMessage") and value from user
+        model.addAttribute("helloMessage", demoService.getHelloMessage(user));
+        model.addAttribute("age", age);
         log.info("model= {}", model);
 
 
