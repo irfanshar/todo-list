@@ -19,7 +19,6 @@ public class DemoController {
     // == fields ==
     private final DemoService demoService;
 
-
     // == constructors ==
     @Autowired
     public DemoController(DemoService demoService){
