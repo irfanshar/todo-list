@@ -5,7 +5,10 @@ import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
 
+// @Data annotation acts as a @Getter and @Setter annotation
 @Data
+// @EqualsAndHashCode annotation creates equals and hash code methods
+// based of the given field
 @EqualsAndHashCode(of = "id")
 public class TodoItem {
 
