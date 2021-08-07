@@ -21,7 +21,7 @@ public class DemoController {
 
     // == constructors ==
     @Autowired
-    public DemoController(DemoService demoService){
+    public DemoController(DemoService demoService) {
         this.demoService = demoService;
     }
 
@@ -31,7 +31,7 @@ public class DemoController {
     // http://localhost:8080/todo-list/hello
     @ResponseBody // this annotation allows you to render your text without a view
     @GetMapping("/hello")
-    public String hello(){
+    public String hello() {
         return "hello";
     }
 
@@ -41,12 +41,14 @@ public class DemoController {
     // This annotation is what will be in the url
     @GetMapping("welcome")
     // Model will be provided by the DispatcherServlet as a key/value pair
-    public String welcome(@RequestParam String user, @RequestParam int age, Model model){
+    public String welcome(@RequestParam String user, @RequestParam int age, Model model) {
 
         // adding a key value pair since every
         // attribute has a key ("helloMessage") and value from user
         model.addAttribute("helloMessage", demoService.getHelloMessage(user));
         model.addAttribute("age", age);
+        model.addAttribute("modelMessage", model);
+
         log.info("model= {}", model);
 
 
@@ -56,10 +58,15 @@ public class DemoController {
         return "welcome";
     }
 
+    @GetMapping("irfan")
+    public String irfanHello(Model model) {
+        model.addAttribute("hello", "hello");
+        return "irfan_hello";
+    }
 
     // == model attributes ==
     @ModelAttribute("welcomeMessage")
-    public String welcomeMessage(){
+    public String welcomeMessage() {
         log.info("welcomeMessage() called");
         return demoService.getWelcomeMessage();
     }
