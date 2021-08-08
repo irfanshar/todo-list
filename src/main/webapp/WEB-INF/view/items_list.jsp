@@ -22,7 +22,7 @@
 
         <%-- var represents a single item in a collection of items --%>
         <%-- items represents the collection we will loop through --%>
-        <c:forEach var="item" items="${todoData.items}">
+        <c:forEach var="item" items="${todoData.getItems()}">
 
             <tr>
                 <td><c:out value="${item.title}"></c:out></td>

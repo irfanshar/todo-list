@@ -10,6 +10,7 @@ import java.time.LocalDate;
 // @EqualsAndHashCode annotation creates equals and hash code methods
 // based of the given field
 @EqualsAndHashCode(of = "id")
+// class represents a single to do item
 public class TodoItem {
 
     // == fields ==

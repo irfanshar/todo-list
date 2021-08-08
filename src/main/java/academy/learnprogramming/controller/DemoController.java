@@ -47,8 +47,11 @@ public class DemoController {
         // attribute has a key ("helloMessage") and value from user
         model.addAttribute("helloMessage", demoService.getHelloMessage(user));
         model.addAttribute("age", age);
-        model.addAttribute("modelMessage", model);
 
+        // these two do the same thing
+        // one displays the model in the view
+        // one displays the model in the log
+        model.addAttribute("modelMessage", model);
         log.info("model= {}", model);
 
 
@@ -61,6 +64,7 @@ public class DemoController {
     @GetMapping("irfan")
     public String irfanHello(Model model) {
         model.addAttribute("hello", "hello");
+        model.addAttribute("model", model);
         return "irfan_hello";
     }
 

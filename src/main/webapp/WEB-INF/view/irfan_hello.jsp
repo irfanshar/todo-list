@@ -1,11 +1,12 @@
 <html>
 <head>
-    <title>Welcome</title>
+    <title>Irfan says Hello</title>
 </head>
 <body>
 
 <h1>${hello}</h1>
-<h2>${welcomeMessage}</h2>
+
+<h2>${model}</h2>
 
 </body>
 </html>

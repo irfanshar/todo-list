@@ -1,6 +1,7 @@
 package academy.learnprogramming.model;
 
 import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 // represents the in memory database
+// class is meant to represent an entire todo list
 public class TodoData {
 
     // == fields ==
@@ -29,6 +31,8 @@ public class TodoData {
 
     // == public methods ==
     public List<TodoItem> getItems() {
+        // returns the ArrayList but prevents the caller from
+        // modifying the ArrayList
         return Collections.unmodifiableList(items);
     }
 
