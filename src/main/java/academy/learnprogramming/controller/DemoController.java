@@ -69,6 +69,8 @@ public class DemoController {
     }
 
     // == model attributes ==
+
+    // this adds the attribute for all models in this controller
     @ModelAttribute("welcomeMessage")
     public String welcomeMessage() {
         log.info("welcomeMessage() called");

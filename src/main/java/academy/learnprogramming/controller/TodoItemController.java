@@ -47,7 +47,7 @@ public class TodoItemController {
     @GetMapping(Mappings.ADD_ITEM)
     public String addEditItem(Model model) {
         TodoItem todoItem = new TodoItem("", "", LocalDate.now());
-        model.addAttribute(AttributeNames.TODO_ITEM);
+        model.addAttribute(AttributeNames.TODO_ITEM, todoItem);
 
         return ViewNames.ADD_ITEM;
     }
@@ -58,6 +58,8 @@ public class TodoItemController {
     @PostMapping(Mappings.ADD_ITEM)
     public String processItem(@ModelAttribute(AttributeNames.TODO_ITEM) TodoItem todoItem) {
         log.info("todoItem from form ={}", todoItem);
+
+        // adds the new todoItem to the TodoData
         todoItemService.addItem(todoItem);
 
         return "redirect:/" + Mappings.ITEMS;
