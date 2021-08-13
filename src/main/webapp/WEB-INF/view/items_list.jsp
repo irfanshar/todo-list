@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="academy.learnprogramming.util.Mappings" %>
+<%@ page import="academy.learnprogramming.util.HyperlinkConstants" %>
 
 <html>
 <head>
@@ -9,14 +10,14 @@
 
 <%-- div tag used to center table in middle of page --%>
 <div align="center">
-    <c:url var="addUrl" value="${Mappings.ADD_ITEM}"/>
-    <h2><a href="${addUrl}">New Item</a></h2>
 
+    <c:url var="homePage" value="/"/>
+    <h4 style="text-align:left "><a href="${homePage}">Home</a></h4>
 
     <table border="1" cellpadding="5">
 
         <%-- caption tag is used for the String displayed on the tab --%>
-        <caption><h2>Todo Items</h2></caption>
+        <caption><h2>${HyperlinkConstants.TODO_ITEMS}</h2></caption>
 
         <%-- tr indicates a table row --%>
         <tr>
@@ -37,7 +38,7 @@
             </c:url>
 
             <c:url var="editUrl" value="${Mappings.ADD_ITEM}">
-                    <c:param name="id" value="${item.id}"/>
+                <c:param name="id" value="${item.id}"/>
             </c:url>
 
             <c:url var="deleteUrl" value="${Mappings.DELETE_ITEM}">
@@ -54,6 +55,10 @@
 
         </c:forEach>
     </table>
+
+    <c:url var="addUrl" value="${Mappings.ADD_ITEM}"/>
+    <h2><a href="${addUrl}">${HyperlinkConstants.ADD_ITEM}</a></h2>
+
 </div>
 
 </body>

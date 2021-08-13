@@ -45,6 +45,8 @@
     <c:url var="tableUrl" value="${Mappings.ITEMS}"/>
     <h3><a href="${tableUrl}">Show Items List</a></h3>
 
+<%--    <c:url var="editItemUrl" value=""--%>
+
 </div>
 
 </body>

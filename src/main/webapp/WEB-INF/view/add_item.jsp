@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page import="academy.learnprogramming.util.AttributeNames" %>
+<%@ page import="academy.learnprogramming.util.Mappings" %>
+<%@ page import="academy.learnprogramming.util.HyperlinkConstants" %>
 
 <html>
 <head>
@@ -17,6 +19,14 @@
     <%--       i.e. bind the entire form to a single parameter in a method--%>
     <%--       all the fields in teh form wil be transferred to the controller as a parameter--%>
     <%--@elvariable id="${AttributeNames.TODO_ITEM}" type="academy.learnprogramming"--%>
+
+<%-- TODO ADD A CONSTANT FOR THE HOME MAPPING--%>
+    <c:url var="homeUrl" value="/"/>
+    <h4 style="text-align: left;"><a href="${homeUrl}">Home</a></h4>
+
+    <c:url var="tableUrl" value="${Mappings.ITEMS}"/>
+    <h4 style="text-align: left;"><a href="${tableUrl}">${HyperlinkConstants.TODO_ITEMS}</a></h4>
+
     <form:form method="POST" modelAttribute="${AttributeNames.TODO_ITEM}">
 
         <table>
@@ -24,7 +34,7 @@
             <tr>
                 <td><label>ID</label></td>
                 <td>
-                    <form:input path="id" disabled="true" />
+                    <form:input path="id" disabled="true"/>
                 </td>
             </tr>
 
