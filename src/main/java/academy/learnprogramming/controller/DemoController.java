@@ -47,6 +47,7 @@ public class DemoController {
         // attribute has a key ("helloMessage") and value from user
         model.addAttribute("helloMessage", demoService.getHelloMessage(user));
         model.addAttribute("age", age);
+        model.addAttribute("user", user);
 
         // these two do the same thing
         // one displays the model in the view
@@ -62,9 +63,10 @@ public class DemoController {
     }
 
     @GetMapping("irfan")
-    public String irfanHello(Model model) {
+    public String irfanHello(Model model, @ModelAttribute("user") String user) {
         model.addAttribute("hello", "hello");
         model.addAttribute("model", model);
+        model.addAttribute("theUser", user);
         return "irfan_hello";
     }
 

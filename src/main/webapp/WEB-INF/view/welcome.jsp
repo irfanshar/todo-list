@@ -7,5 +7,6 @@
     <h2>age parameter is ${age}</h2>
     <h2>${welcomeMessage}</h2>
     <h3>${modelMessage}</h3>
+    <h3>${user}</h3>
 </body>
 </html>
