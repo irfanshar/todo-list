@@ -29,7 +29,7 @@ public class TodoItemController {
 
     // == model attributes ==
     @ModelAttribute
-    public TodoData todoData() {
+    public TodoData todData() {
         // returns a TodoData
         return todoItemService.getData();
     }

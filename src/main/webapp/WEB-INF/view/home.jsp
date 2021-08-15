@@ -16,6 +16,9 @@
     <c:url var="itemsLink" value="${Mappings.ITEMS}"/>
     <h3><a href="${itemsLink}">${HyperlinkConstants.TODO_ITEMS}</a></h3>
 
+    <c:url var="journalLink" value="${Mappings.JOURNAL}"/>
+    <h3><a href="${journalLink}">${HyperlinkConstants.JOURNAL}</a></h3>
+
 </div>
 
 </body>
